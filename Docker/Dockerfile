@@ -7,6 +7,7 @@ MAINTAINER David Koslicki version: 0.1
 
 #Install Julia, force zero exit code for apt-get update due to outdated package called "wheezy" (who knows what that is!)
 RUN apt-get -y udate && \
+ apt-get install -y wget && \
  apt-get install -y software-properties-common python-software-properties  && \ 
  add-apt-repository -y ppa:staticfloat/juliareleases && \ 
  add-apt-repository -y ppa:staticfloat/julia-deps
@@ -31,8 +32,7 @@ RUN apt-get install -y build-essential && \
 RUN apt-get install -y gzip
 
 #Install HMMER3
-RUN apt-get install -y wget && \
- wget ftp://selab.janelia.org/pub/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz && \
+Run wget ftp://selab.janelia.org/pub/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz && \
  tar xf hmmer-3.1b2.tar.gz && \
  cd hmmer-3.1b2 && \
  ./configure && \
