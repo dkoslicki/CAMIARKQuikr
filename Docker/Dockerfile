@@ -31,7 +31,8 @@ RUN apt-get install -y build-essential && \
 RUN apt-get install -y gzip
 
 #Install HMMER3
-RUN wget ftp://selab.janelia.org/pub/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz && \
+RUN apt-get install -y wget && \
+ wget ftp://selab.janelia.org/pub/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz && \
  tar xf hmmer-3.1b2.tar.gz && \
  cd hmmer-3.1b1 && \
  ./configure && \
