@@ -28,7 +28,9 @@ do
 	cd /CAMIARKQuikr/src/Julia
 	#Run ARKQuikr
 	#julia -p ${DCKR_THREADS} /usr/local/sbin/Classify.jl -j /jellyfish/jellyfish-2.2.3/bin/./jellyfish -i /tmp/input.fq -Q ${QUALITY:=C} -d ${CONT_DATABASES_DIR}/CommonKmersData -k default -o ${CONT_PROFILING_FILES}/${file}.profile --normalize
-	julia ARK.jl -i /tmp/Extracted16S.fa -o ${CONT_PROFILING_FILES}/${file}.profile -n 10 -t SEK
-	cd /dckr/mnt/input
+	julia ARK.jl -i /tmp/Extracted16S.fa -o /tmp/out.profile -n 10 -t SEK
+	cd /tmp
+	#Remove anything after the family classification
+	head -n $(grep -n family out.profile | cut -d':' -f1 | tail -n 1) out.profile > ${CONT_PROFILING_FILES}/${file}.profile
 done
 
