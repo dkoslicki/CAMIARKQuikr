@@ -139,7 +139,7 @@ function ConvertToCAMIOutput(input, taxonomy_file, output_level, output_file)
 			write(output_file_handle, "\t")
 			write(output_file_handle, "$(taxPathSN)")
 			write(output_file_handle, "\t")
-			write(output_file_handle, "$(taxa_abundances[unique_taxa_name])")
+			write(output_file_handle, "$(100*taxa_abundances[unique_taxa_name])")
 			write(output_file_handle, "\n")
 		end
 	end
