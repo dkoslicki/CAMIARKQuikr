@@ -20,7 +20,7 @@ RUN apt-get install -y git && \
  git clone https://github.com/dkoslicki/CAMIARKQuikr.git
 
 #Install DNAUtils
-RUN https://github.com/EESI/dna-utils.git && \
+RUN git clone https://github.com/EESI/dna-utils.git && \
  cd dna-utils/ && \
  make && \
  cp kmer_total_count /usr/local/bin
