@@ -6,7 +6,7 @@ MAINTAINER David Koslicki version: 0.1
 
 
 #Install Julia, force zero exit code for apt-get update due to outdated package called "wheezy" (who knows what that is!)
-RUN apt-get udate -y && \
+RUN apt-get update -y && \
  apt-get install -y wget && \
  apt-get install -y software-properties-common python-software-properties  && \ 
  add-apt-repository -y ppa:staticfloat/juliareleases && \ 
