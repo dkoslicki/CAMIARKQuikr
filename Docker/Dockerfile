@@ -7,6 +7,7 @@ MAINTAINER David Koslicki version: 0.1
 
 #Install Julia, force zero exit code for apt-get update due to outdated package called "wheezy" (who knows what that is!)
 RUN apt-get update -y && \
+ apt-get install -y build-essential && \
  apt-get install -y wget && \
  apt-get install -y software-properties-common python-software-properties  && \ 
  add-apt-repository -y ppa:staticfloat/juliareleases && \ 
@@ -21,8 +22,7 @@ RUN apt-get install -y git && \
  git clone https://github.com/dkoslicki/CAMIARKQuikr.git
 
 #Install DNAUtils
-RUN apt-get install -y build-essential && \
- git clone https://github.com/EESI/dna-utils.git && \
+RUN git clone https://github.com/EESI/dna-utils.git && \
  cd dna-utils/ && \
  make && \
  cp kmer_total_count /usr/local/bin && \
