@@ -24,7 +24,7 @@ RUN apt-get install -y build-essential && \
  git clone https://github.com/EESI/dna-utils.git && \
  cd dna-utils/ && \
  make && \
- cp kmer_total_count /usr/local/bin
+ cp kmer_total_count /usr/local/bin && \
  cp kmer_counts_per_sequence /usr/local/bin
  
 #Install gzip
