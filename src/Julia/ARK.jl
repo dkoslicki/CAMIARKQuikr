@@ -250,6 +250,7 @@ elseif training_database == "SEK" #using the split Quikr database (known as the 
 	ConvertToCAMIOutput(result_ARK_Quikr, "../../data/trainset7_SEK_taxonomy.txt", output_level, output_file)
 	success(`grep -v $'||\t' $output_file ` |> "Julia_temp_out_file.txt");
 	success(`cp Julia_temp_out_file.txt $output_file `);
+	success(`rm Julia_temp_out_file.txt`)
 else
 	error("Incorrect training database choice (-t). Options are: Quikr, SEK")
 end
