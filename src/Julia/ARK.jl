@@ -248,7 +248,7 @@ elseif training_database == "SEK" #using the split Quikr database (known as the 
 	#Write the output to file
 	output_level = 0; #Since we don't have hypothetical organisms
 	ConvertToCAMIOutput(result_ARK_Quikr, "../../data/trainset7_SEK_taxonomy.txt", output_level, output_file)
-	success(`grep -v \$'|\t' $output_file ` |> "Julia_temp_out_file.txt");
+	success(`grep -v -P '\|\t' $output_file ` |> "Julia_temp_out_file.txt");
 	success(`cp Julia_temp_out_file.txt $output_file `);
 	success(`rm Julia_temp_out_file.txt`)
 else
