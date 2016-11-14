@@ -42,6 +42,6 @@ Run wget http://eddylab.org/software/hmmer3/3.1b2/hmmer-3.1b2.tar.gz && \
 
 #Create tasks
 RUN cp /CAMIARKQuikr/Docker/default /dckr/etc/tasks.d/default && \
- cp /CAMIARKQuikr/Docker/quikr /dckr/etc/tasks.d/default
+ cp /CAMIARKQuikr/Docker/quikr /dckr/etc/tasks.d/quikr
 
 #echo -e "\n \n NOTE: Be sure to download the training data at http://www.math.oregonstate.edu/~koslickd/CommonKmersData.tar.gz and uncompress it. The resulting directory should be passed to docker at the location CONT_DATABASES_DIR via: -v /path/to/uncompressed/Data:/dckr/mnt/camiref/CommonKmersData:ro"
