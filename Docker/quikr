@@ -32,5 +32,6 @@ do
 	cd /tmp
 	#Remove anything after the family classification
 	#head -n $(grep -n family out.profile | cut -d':' -f1 | tail -n 1) out.profile > ${CONT_PROFILING_FILES}/${file}.profile
+	cp out.profile > ${CONT_PROFILING_FILES}/$(file}.profile
 done
 
